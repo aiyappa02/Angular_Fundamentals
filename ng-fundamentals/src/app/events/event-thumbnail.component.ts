@@ -8,7 +8,7 @@ import { templateRefExtractor } from '@angular/core/src/render3';
 
         <h2>{{event?.name}}</h2> 
         <div>Date: {{event?.date}}</div>
-        <div [ngSwitch] = "event?.time">
+        <div [ngClass]= "getStartTimeClass()" [ngSwitch] = "event?.time">
             Time: {{event?.time}}
             <span *ngSwitchCase= "'8:00 am'">(Early Start)</span>
             <span *ngSwitchCase= "'10:00 am'">(Late Start)</span>
@@ -32,7 +32,9 @@ import { templateRefExtractor } from '@angular/core/src/render3';
         .pad-left {margin-left:10px; }
             .well div{color : #bbb; }
             .thumbnail {min-height :210px;}
-        
+            .green { color: #003300 !important; }
+            .bold { font-weight:bold;}
+            
         `]
     // <!-- {{ }} double braces notation : Angular will look for obj  in the component( HereEventListComponent). The  obj is event. will find event.name -->
 })
@@ -40,4 +42,16 @@ import { templateRefExtractor } from '@angular/core/src/render3';
 export class EventThumbnailComponent {
 
     @Input() event : any //tells angular that an event(gathering event) will be passed from another component
+
+    // getStartTimeClass(){
+    //     const isEarlyStart = this.event && this.event.time === '8:00 am'
+    //     return {green : isEarlyStart, bold: isEarlyStart}
+    // }
+    // (OR)
+    getStartTimeClass(){
+        if (this.event && this.event.time === '8:00 am')
+            return 'green bold'
+        return ' '
+    }
+    
 }
