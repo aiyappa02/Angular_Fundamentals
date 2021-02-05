@@ -7,9 +7,15 @@ import { Component } from '@angular/core'
     <div>
         <h1>Upcoming Angular Events</h1>
         <hr/> 
-        <event-thumbnail (eventClick) = "handleEventClicked ($event)" 
-        [event] = "event1"></event-thumbnail>
-    </div>`
+        <div class = "well">
+            <div> Hello World</div>
+        </div>
+        <event-thumbnail [event] = "event1"></event-thumbnail>
+    </div>`,
+
+    styles : [`
+        .well div{color : red; }
+   ` ]
    
 })
 export class EventsListComponent {
@@ -28,8 +34,5 @@ export class EventsListComponent {
         }
     }
 
-    handleEventClicked(data) {
-        console.log('received : ' , data) 
-       }
     
 }

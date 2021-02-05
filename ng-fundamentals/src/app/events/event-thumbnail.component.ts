@@ -1,4 +1,4 @@
-import{Component, Input, Output, EventEmitter} from '@angular/core'
+import{Component, Input} from '@angular/core'
 import { templateRefExtractor } from '@angular/core/src/render3';
 
 @Component({
@@ -12,22 +12,20 @@ import { templateRefExtractor } from '@angular/core/src/render3';
    
         <div>
             <span>Location: {{event.location.address}}</span>
-            <span>&nbsp;</span>
-            <span>{{event.location.city}}, {{event.location.country}}</span>
+            
+            <span class ="pad-left">{{event.location.city}}, {{event.location.country}}</span>
         </div>
-        <button class="btn btn-primary" (click) = "handleClickMe()">Click Me !</button>
+    
     </div>
-    `
+    `,
+    styles: [`
+        .pad-left {margin-left:10px ; }
+        
+        `]
     // <!-- {{ }} double braces notation : Angular will look for obj  in the component( HereEventListComponent). The  obj is event. will find event.name -->
 })
 
 export class EventThumbnailComponent {
 
     @Input() event : any //tells angular that an event(gathering event) will be passed from another component
-    @Output() eventClick = new EventEmitter() //EventEmitter is and Angular term
-    
-    handleClickMe(){
-        console.log('Clicked!')
-        this.eventClick.emit(this.event.name) //emit an event with event emitter each time the buton is clicked 
-    }
 }
