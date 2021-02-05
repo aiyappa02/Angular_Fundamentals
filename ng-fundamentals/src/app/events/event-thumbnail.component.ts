@@ -19,7 +19,8 @@ import { templateRefExtractor } from '@angular/core/src/render3';
     </div>
     `,
     styles: [`
-        .pad-left {margin-left:10px ; }
+        .pad-left {margin-left:10px ; 
+            .well div{color : #bbb; }}
         
         `]
     // <!-- {{ }} double braces notation : Angular will look for obj  in the component( HereEventListComponent). The  obj is event. will find event.name -->
