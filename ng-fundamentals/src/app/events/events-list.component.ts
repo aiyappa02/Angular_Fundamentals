@@ -6,7 +6,7 @@ declare let toastr
 //import { time } from 'console'
 
 @Component({
-    selector : 'events-list' ,
+    // selector : 'events-list' ,
     template : `
     <div >
         <h1>Upcoming Angular Events</h1> 
