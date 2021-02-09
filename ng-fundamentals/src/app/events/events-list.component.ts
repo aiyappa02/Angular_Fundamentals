@@ -17,7 +17,9 @@ declare let toastr
             </div>
         </div>
     </div>`,
-
+    styles : [ `
+            h1{color: red;}
+            `]
    
 })
 export class EventsListComponent implements OnInit{
