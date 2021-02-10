@@ -7,7 +7,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
 
 
 export const appRoutes: Routes = [
-    {path : 'events/new', component : CreateEventComponent}, //order matters new may be confused with :id
+    {path : 'events/new', component : CreateEventComponent, canDeactivate : ['canDeactivateCreateEvent']}, //order matters new may be confused with :id
     {path : 'events' , component : EventsListComponent },
     {path : 'events/:id', component : EventDetailsComponent, canActivate : [EventRouteActivator] },
     // matches events like : //events/1 or /events/foo
