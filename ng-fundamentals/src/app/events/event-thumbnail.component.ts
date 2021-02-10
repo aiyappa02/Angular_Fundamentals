@@ -1,4 +1,5 @@
 import{Component, Input} from '@angular/core'
+import { IEvent} from './shared/index'
 import { templateRefExtractor } from '@angular/core/src/render3';
 
 @Component({
@@ -41,7 +42,7 @@ import { templateRefExtractor } from '@angular/core/src/render3';
 
 export class EventThumbnailComponent {
 
-    @Input() event : any //tells angular that an event(gathering event) will be passed from another component
+    @Input() event: IEvent  //tells angular that an event(gathering event) will be passed from another component
 
     // getStartTimeClass(){
     //     const isEarlyStart = this.event && this.event.time === '8:00 am'
