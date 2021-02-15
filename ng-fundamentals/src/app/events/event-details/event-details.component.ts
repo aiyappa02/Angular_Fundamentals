@@ -16,6 +16,7 @@ export class EventDetailsComponent implements OnInit{
     event:IEvent
     addMode:boolean
     filterBy : string = 'all'; // will not match the casing in display
+    sortBy: string = 'votes';
 
     constructor( private eventService : EventService, private route :ActivatedRoute){
 
