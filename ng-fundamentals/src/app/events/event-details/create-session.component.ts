@@ -52,7 +52,7 @@ export class CreateSessionComponent implements OnInit{
             voters: []
         }
         console.log(session)
-        this.saveNewSession.emit(session)
+        this.saveNewSession.emit(session)// outputs the new session to selector in event-details
     }
 
     cancel(){

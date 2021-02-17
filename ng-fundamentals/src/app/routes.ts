@@ -20,6 +20,7 @@ export const appRoutes: Routes = [
     // matches events like : //events/1 or /events/foo
     {path : '404' ,component :Error404Component },
     {path: '', redirectTo : '/events', pathMatch : 'full' },
+    // {path: "**", redirectTo : '/404' },
     {path : 'user', loadChildren : './user/user.module#UserModule'}
     
 ]
