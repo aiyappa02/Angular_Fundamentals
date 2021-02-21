@@ -5,7 +5,7 @@ import { AuthService } from  './user/auth.service'
   selector: 'events-app',
   template:`
       <nav-bar></nav-bar>
-    <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     `
 
   // <h1>Hello world<h1>
